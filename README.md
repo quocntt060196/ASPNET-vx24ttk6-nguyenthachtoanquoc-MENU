@@ -46,7 +46,7 @@ với những người dùng khác.
 - Đánh giá món ăn
 - Thêm công thức vào danh sách yêu thích
 
-### 👨‍💼 Quản trị viên
+### Quản trị viên
 
 - Quản lý người dùng
 - Quản lý danh mục món ăn
