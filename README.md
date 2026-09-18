@@ -17,7 +17,7 @@ với những người dùng khác.
 - Hỗ trợ bình luận, đánh giá và yêu thích công thức.
 - Xây dựng hệ thống quản trị để quản lý nội dung.
 
-## 🛠 Công nghệ sử dụng
+## Công nghệ sử dụng
 
 - ASP.NET Core MVC
 - C#
