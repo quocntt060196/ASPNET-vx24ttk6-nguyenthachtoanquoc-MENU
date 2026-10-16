@@ -1,133 +1,58 @@
-# WebsiteNauAn – Website chia sẻ công thức nấu ăn
+## 8. Chạy website
 
-## 1. Giới thiệu đề tài
+### 8.1. Mở dự án
 
-WebsiteNauAn là website được xây dựng bằng ASP.NET Core MVC, hỗ trợ phát triển hệ thống chia sẻ công thức nấu ăn.
+1. Clone repository từ GitHub về máy tính.
+2. Mở thư mục `scr/WebsiteNauAn`.
+3. Mở file `WebsiteNauAn.csproj` bằng Visual Studio.
+4. Đảm bảo máy tính đã cài đặt .NET SDK phù hợp với dự án.
 
-Dự án sử dụng SQL Server để lưu trữ dữ liệu. Cơ sở dữ liệu gồm các bảng quản lý người dùng, danh mục món ăn, công thức nấu ăn, nguyên liệu, các bước chế biến, bình luận, món ăn yêu thích và đánh giá.
-
-## 2. Công nghệ sử dụng
-
-- Ngôn ngữ lập trình: C#.
-- Framework: ASP.NET Core MVC.
-- Cơ sở dữ liệu: Microsoft SQL Server.
-- Công cụ phát triển: Visual Studio.
-- Công cụ quản lý cơ sở dữ liệu: SQL Server Management Studio (SSMS).
-
-## 3. Cấu trúc thư mục
-
-```text
-ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU/
-├── README.md
-├── setup/
-│   └── database/
-│       └── database.sql
-└── scr/
-    └── WebsiteNauAn/
-        ├── Controllers/
-        ├── Data/
-        ├── Models/
-        ├── Views/
-        ├── wwwroot/
-        ├── Program.cs
-        ├── appsettings.json
-        └── WebsiteNauAn.csproj
-```
-
-## 4. Yêu cầu cài đặt
-
-Trước khi chạy dự án, cần chuẩn bị:
-
-- Visual Studio có hỗ trợ ASP.NET và phát triển web.
-- .NET SDK tương thích với phiên bản được khai báo trong file `WebsiteNauAn.csproj`.
-- Microsoft SQL Server.
-- SQL Server Management Studio (SSMS).
-
-## 5. Lấy mã nguồn dự án
-
-Clone repository từ GitHub hoặc tải mã nguồn về máy tính:
-
-https://github.com/quocntt060196/ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU
-
-Sau khi tải về, mở thư mục `scr/WebsiteNauAn` để tìm file dự án `WebsiteNauAn.csproj`.
-
-## 6. Tạo cơ sở dữ liệu
+### 8.2. Chuẩn bị cơ sở dữ liệu
 
 1. Mở SQL Server Management Studio (SSMS).
 2. Kết nối đến SQL Server đang sử dụng.
-3. Chọn **File → Open → File**.
-4. Mở file `setup/database/database.sql` trong repository.
-5. Kiểm tra máy chủ SQL Server đã được kết nối đúng.
-6. Nhấn **Execute** để chạy các lệnh SQL.
-7. Làm mới mục **Databases** và kiểm tra cơ sở dữ liệu `WebsiteNauAn` cùng các bảng đã được tạo.
+3. Mở file `setup/database/database.sql` trong repository.
+4. Chạy script nếu cơ sở dữ liệu `WebsiteNauAn` chưa tồn tại.
+5. Kiểm tra cơ sở dữ liệu và các bảng đã được tạo thành công.
 
-Lưu ý: Chỉ chạy script tạo cơ sở dữ liệu khi chưa có cơ sở dữ liệu tương ứng, hoặc sau khi đã kiểm tra và sao lưu dữ liệu cần giữ lại.
+### 8.3. Cấu hình kết nối
 
-## 7. Cấu hình kết nối SQL Server
-
-Mở file `appsettings.json` trong thư mục `scr/WebsiteNauAn`.
-
-Cấu hình connection string theo SQL Server trên máy đang chạy dự án. Ví dụ:
+Mở file `appsettings.json` và kiểm tra cấu hình:
 
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=YOUR_SERVER_NAME;Database=WebsiteNauAn;Trusted_Connection=True;TrustServerCertificate=True;"
+    "DefaultConnection": "Server=127.0.0.1;Database=WebsiteNauAn;Trusted_Connection=True;TrustServerCertificate=True;"
   }
 }
 ```
 
-Thay `YOUR_SERVER_NAME` bằng tên máy chủ SQL Server thực tế.
+Nếu SQL Server trên máy sử dụng tên instance hoặc cổng khác, hãy điều chỉnh giá trị `Server` cho phù hợp.
 
-Ví dụ, nếu SSMS hiển thị tên máy chủ là `localhost\\SQLEXPRESS`, hãy sử dụng đúng tên đó trong connection string.
+### 8.4. Khởi động website
 
-Nếu dự án sử dụng SQL Server Authentication, cần cấu hình phương thức đăng nhập phù hợp. Không đưa mật khẩu thật hoặc thông tin bí mật vào repository công khai.
+1. Trong Visual Studio, chọn dự án `WebsiteNauAn` làm Startup Project nếu cần.
+2. Chọn **Build → Build Solution**.
+3. Nhấn `F5` hoặc nút **Run**.
+4. Mở địa chỉ HTTP hoặc HTTPS hiển thị trong Visual Studio.
 
-**Quan trọng:** Tên connection string trong `appsettings.json` phải khớp với tên mà dự án đọc trong `Program.cs` hoặc lớp cấu hình dữ liệu. Nếu dự án đang sử dụng tên khác `DefaultConnection`, hãy giữ nguyên tên đang được sử dụng.
+## 9. Kiểm tra kết nối SQL Server
 
-## 8. Chạy website
+Dự án có cung cấp đường dẫn kiểm tra kết nối cơ sở dữ liệu:
 
-### Cách 1: Sử dụng Visual Studio
+`https://localhost:<port>/kiem-tra-db`
 
-1. Mở file `WebsiteNauAn.csproj` hoặc file solution của dự án.
-2. Kiểm tra connection string đã trỏ đến cơ sở dữ liệu đúng.
-3. Chọn dự án `WebsiteNauAn` làm Startup Project nếu cần.
-4. Nhấn **Build → Build Solution**.
-5. Nhấn **Run** hoặc phím `F5` để chạy website.
+Thay `<port>` bằng cổng HTTPS thực tế của website.
 
-### Cách 2: Sử dụng Terminal
+Nếu kết nối thành công, trình duyệt hiển thị:
 
-Mở Terminal tại thư mục chứa `WebsiteNauAn.csproj`, sau đó chạy:
+`Ket noi SQL Server thanh cong!`
 
-```bash
-dotnet restore
-dotnet build
-dotnet run
-```
-
-Khi chương trình khởi động, mở địa chỉ HTTPS hoặc HTTP được hiển thị trong Terminal.
-
-## 9. Kiểm tra hoạt động
-
-Sau khi website khởi động:
-
-- Kiểm tra trang chủ có hiển thị hay không.
-- Truy cập trang danh sách công thức nấu ăn nếu chức năng này đã được triển khai.
-- Kiểm tra dữ liệu được đọc từ cơ sở dữ liệu SQL Server.
-- Kiểm tra cửa sổ Output hoặc Terminal nếu xuất hiện lỗi.
-
-Đường dẫn truy cập cụ thể phụ thuộc vào cấu hình chạy của dự án.
+Nếu xuất hiện lỗi, hãy kiểm tra trạng thái SQL Server, tên cơ sở dữ liệu, tên máy chủ và cấu hình kết nối trong `appsettings.json`.
 
 ## 10. Lưu ý
 
-- Cần cấu hình SQL Server phù hợp với từng máy tính.
-- File `database.sql` chứa các lệnh tạo cơ sở dữ liệu và cấu trúc bảng.
-- Cần bổ sung dữ liệu mẫu nếu muốn kiểm thử trên một cơ sở dữ liệu mới.
-- Không chia sẻ mật khẩu, tài khoản hoặc thông tin kết nối bí mật trong repository công khai.
-
-## 11. Repository
-
-Mã nguồn dự án:
-
-https://github.com/quocntt060196/ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU
-
+- Cần cài đặt SQL Server và cấu hình kết nối phù hợp với máy tính chạy dự án.
+- Không chạy lại script tạo bảng trên cơ sở dữ liệu đang chứa dữ liệu cần giữ lại.
+- Nếu sử dụng cơ sở dữ liệu mới, cần thêm dữ liệu mẫu trước khi kiểm thử các chức năng cần dữ liệu.
+- Không công khai mật khẩu hoặc thông tin đăng nhập bí mật trên GitHub.
