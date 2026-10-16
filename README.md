@@ -1,37 +1,56 @@
-# WebsiteNauAn – Website chia sẻ công thức nấu ăn
+# WebsiteNauAn – Website Chia Sẻ Công Thức Nấu Ăn
 
-## 1. Giới thiệu đề tài
+## 1. Giới thiệu dự án
 
-WebsiteNauAn là website được xây dựng bằng ASP.NET Core MVC và ngôn ngữ C#. Dự án sử dụng Microsoft SQL Server để lưu trữ và quản lý dữ liệu liên quan đến công thức nấu ăn.
+**WebsiteNauAn** là website chia sẻ công thức nấu ăn được xây dựng nhằm hỗ trợ người dùng tìm kiếm món ăn, tham khảo nguyên liệu và thực hiện các bước chế biến. Hệ thống giúp người dùng khám phá những món ăn mới và lưu lại các công thức yêu thích.
 
-Hệ thống cơ sở dữ liệu được thiết kế để quản lý người dùng, danh mục món ăn, công thức nấu ăn, nguyên liệu, các bước chế biến, bình luận, món ăn yêu thích và đánh giá.
+Dự án được thực hiện trong khuôn khổ học tập, sử dụng công nghệ ASP.NET Core MVC và cơ sở dữ liệu SQL Server.
 
-## 2. Mục tiêu
+## 2. Thông tin sinh viên
 
-- Xây dựng website bằng ASP.NET Core MVC.
-- Kết nối và thao tác với cơ sở dữ liệu SQL Server.
-- Tổ chức mã nguồn theo mô hình Model – View – Controller.
-- Quản lý thông tin công thức nấu ăn và dữ liệu liên quan.
-- Cung cấp hướng dẫn cài đặt và chạy dự án.
+- **Họ và tên:** Nguyễn Thạch Toàn Quốc
+- **Email:** nt.toanquoc@gmail.com
+- **Số điện thoại:** 0386779008
+- **Trường:** Trường Đại học Trà Vinh
+- **Ngành học:** Công nghệ thông tin
 
 ## 3. Công nghệ sử dụng
 
-- Ngôn ngữ lập trình: C#.
-- Framework: ASP.NET Core MVC.
-- Truy cập dữ liệu: Entity Framework Core.
-- Hệ quản trị cơ sở dữ liệu: Microsoft SQL Server.
-- Công cụ quản lý cơ sở dữ liệu: SQL Server Management Studio (SSMS).
-- Môi trường phát triển: Visual Studio.
-- Quản lý mã nguồn: Git và GitHub.
+- **Ngôn ngữ lập trình:** C#
+- **Framework:** ASP.NET Core MVC
+- **Nền tảng:** .NET 10
+- **Cơ sở dữ liệu:** Microsoft SQL Server
+- **ORM:** Entity Framework Core
+- **Công cụ phát triển:** Visual Studio
+- **Quản lý mã nguồn:** Git và GitHub
 
-## 4. Cấu trúc thư mục
+## 4. Các chức năng chính
+
+- Hiển thị danh sách món ăn.
+- Xem thông tin chi tiết của từng món ăn.
+- Hiển thị nguyên liệu và số lượng cần thiết.
+- Hiển thị các bước thực hiện món ăn.
+- Đánh giá món ăn.
+- Bình luận về công thức nấu ăn.
+- Thêm hoặc xóa món ăn khỏi danh sách yêu thích.
+- Lưu trữ và quản lý dữ liệu thông qua SQL Server.
+
+*Lưu ý: Các chức năng cần được kiểm thử đầy đủ trước khi xác nhận website đã hoàn thiện.*
+
+## 5. Cấu trúc thư mục dự án
 
 ```text
 ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU/
+│
 ├── README.md
+│
+├── progress-report/
+│   └── Báo cáo tiến độ thực hiện dự án
+│
 ├── setup/
 │   └── database/
 │       └── database.sql
+│
 ├── src/
 │   └── WebsiteNauAn/
 │       ├── Controllers/
@@ -39,12 +58,10 @@ ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU/
 │       ├── Models/
 │       ├── Views/
 │       ├── wwwroot/
-│       ├── Properties/
 │       ├── Program.cs
 │       ├── appsettings.json
-│       ├── WebsiteNauAn.csproj
-│       └── WebsiteNauAn.slnx
-├── progress-report/
+│       └── WebsiteNauAn.csproj
+│
 └── thesis/
     ├── doc/
     ├── pdf/
@@ -52,200 +69,73 @@ ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU/
     └── abs/
 ```
 
-Lưu ý: Các thư mục `progress-report` và `thesis` cần được bổ sung tài liệu thực tế theo yêu cầu của giảng viên nếu chưa có.
+## 6. Hướng dẫn cài đặt và chạy chương trình
 
-## 5. Yêu cầu cài đặt
+### Bước 1: Chuẩn bị môi trường
 
-Trước khi chạy dự án, cần chuẩn bị:
+Cài đặt các công cụ sau:
 
-1. Visual Studio có hỗ trợ phát triển ASP.NET Core.
-2. .NET SDK tương thích với phiên bản được khai báo trong `WebsiteNauAn.csproj`.
-3. Microsoft SQL Server.
-4. SQL Server Management Studio (SSMS).
+- Visual Studio có hỗ trợ ASP.NET và web development.
+- .NET 10 SDK.
+- Microsoft SQL Server.
+- SQL Server Management Studio (SSMS).
 
-## 6. Tải mã nguồn
+### Bước 2: Tạo cơ sở dữ liệu
 
-Repository GitHub:
+1. Mở SQL Server Management Studio.
+2. Kết nối đến SQL Server.
+3. Mở file `setup/database/database.sql`.
+4. Kiểm tra nội dung script, sau đó thực thi để tạo cơ sở dữ liệu và dữ liệu mẫu.
 
-https://github.com/quocntt060196/ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU
+Tên cơ sở dữ liệu sử dụng trong dự án: `WebsiteNauAn`.
 
-Clone repository bằng Git:
+### Bước 3: Cấu hình kết nối SQL Server
 
-```bash
-git clone https://github.com/quocntt060196/ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU.git
-```
+Mở file `src/WebsiteNauAn/appsettings.json` và kiểm tra chuỗi kết nối trong mục `ConnectionStrings`.
 
-Sau khi tải mã nguồn, mở thư mục `src/WebsiteNauAn` và tìm file `WebsiteNauAn.csproj` để mở dự án bằng Visual Studio.
-
-## 7. Tạo cơ sở dữ liệu SQL Server
-
-File script cơ sở dữ liệu:
-
-`setup/database/database.sql`
-
-Cơ sở dữ liệu có tên `WebsiteNauAn` và gồm 9 bảng:
-
-| STT | Tên bảng | Chức năng |
-|---:|---|---|
-| 1 | Users | Quản lý người dùng |
-| 2 | Categories | Quản lý danh mục món ăn |
-| 3 | Recipes | Lưu công thức nấu ăn |
-| 4 | Ingredients | Lưu thông tin nguyên liệu |
-| 5 | RecipeIngredients | Liên kết công thức với nguyên liệu |
-| 6 | Steps | Lưu các bước chế biến |
-| 7 | Comments | Lưu bình luận |
-| 8 | Favorites | Lưu món ăn yêu thích |
-| 9 | Ratings | Lưu điểm đánh giá |
-
-### Các bước tạo cơ sở dữ liệu
-
-1. Mở SQL Server Management Studio (SSMS).
-2. Kết nối đến SQL Server đang sử dụng.
-3. Chọn **File → Open → File**.
-4. Mở file `setup/database/database.sql`.
-5. Kiểm tra kết nối đến đúng SQL Server.
-6. Nhấn **Execute** để chạy script.
-7. Nhấn chuột phải vào **Databases → Refresh**.
-8. Kiểm tra cơ sở dữ liệu `WebsiteNauAn` và các bảng.
-
-**Lưu ý:** Script hiện tại sử dụng lệnh `CREATE DATABASE` và `CREATE TABLE`. Chỉ chạy khi cơ sở dữ liệu hoặc các bảng chưa tồn tại, hoặc sau khi đã kiểm tra và sao lưu dữ liệu cần giữ lại. Script tạo cấu trúc bảng nhưng chưa tự thêm dữ liệu mẫu nếu không có lệnh `INSERT INTO`.
-
-## 8. Cấu hình kết nối SQL Server
-
-Mở file:
-
-`src/WebsiteNauAn/appsettings.json`
-
-Cấu hình hiện tại:
+Ví dụ:
 
 ```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=127.0.0.1;Database=WebsiteNauAn;Trusted_Connection=True;TrustServerCertificate=True;"
-  },
-  "Logging": {
-    "LogLevel": {
-      "Default": "Information",
-      "Microsoft.AspNetCore": "Warning"
-    }
-  },
-  "AllowedHosts": "*"
+  }
 }
 ```
 
-Ý nghĩa:
+**Lưu ý:** Nếu SQL Server trên máy tính sử dụng tên máy chủ hoặc instance khác, hãy thay giá trị `Server` cho phù hợp. Không đưa mật khẩu hoặc thông tin kết nối nhạy cảm lên repository công khai.
 
-- `Server=127.0.0.1`: địa chỉ máy chủ SQL Server trên máy tính cục bộ.
-- `Database=WebsiteNauAn`: cơ sở dữ liệu sử dụng.
-- `Trusted_Connection=True`: sử dụng xác thực Windows.
-- `TrustServerCertificate=True`: chấp nhận chứng chỉ máy chủ mà không xác minh chuỗi tin cậy.
-- `DefaultConnection`: tên chuỗi kết nối được sử dụng trong mã nguồn.
-
-Nếu SQL Server trên máy tính sử dụng instance hoặc cổng riêng, cần thay đổi giá trị `Server` cho phù hợp. Ví dụ `.\SQLEXPRESS` chỉ sử dụng khi máy có instance SQL Server Express tương ứng.
-
-Tên chuỗi kết nối `DefaultConnection` phải khớp với cấu hình trong `Program.cs`.
-
-## 9. Cấu hình Entity Framework Core
-
-Trong `Program.cs`, dự án đăng ký `ApplicationDbContext` để kết nối SQL Server:
-
-```csharp
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
-```
-
-Entity Framework Core hỗ trợ ứng dụng thao tác với cơ sở dữ liệu thông qua `ApplicationDbContext`.
-
-## 10. Chạy website bằng Visual Studio
+### Bước 4: Mở và chạy dự án
 
 1. Mở Visual Studio.
-2. Chọn **Open a project or solution**.
-3. Mở file `WebsiteNauAn.csproj` trong `src/WebsiteNauAn`.
-4. Kiểm tra cấu hình SQL Server trong `appsettings.json`.
-5. Đảm bảo cơ sở dữ liệu `WebsiteNauAn` đã được tạo.
-6. Chọn **Build → Build Solution**.
-7. Nhấn `F5` hoặc nút **Run** để khởi động website.
-8. Mở địa chỉ HTTP hoặc HTTPS hiển thị trong Visual Studio.
+2. Mở solution của dự án `WebsiteNauAn`.
+3. Kiểm tra kết nối cơ sở dữ liệu.
+4. Chọn dự án `WebsiteNauAn` làm Startup Project.
+5. Nhấn `F5` hoặc `Ctrl + F5` để chạy website.
 
-## 11. Chạy website bằng Terminal
+Địa chỉ chạy thử hiện tại trên máy phát triển có thể là:
 
-Mở Terminal tại thư mục chứa file `WebsiteNauAn.csproj`, sau đó chạy:
+`https://localhost:7148/`
 
-```bash
-dotnet restore
-dotnet build
-dotnet run
-```
+Địa chỉ này có thể thay đổi tùy cấu hình chạy của Visual Studio.
 
-Trong đó:
+## 7. Kiểm thử chương trình
 
-- `dotnet restore`: khôi phục các gói phụ thuộc.
-- `dotnet build`: biên dịch dự án.
-- `dotnet run`: khởi động website.
+Sau khi chạy website, tiến hành kiểm tra:
 
-Sau khi chạy, mở địa chỉ được hiển thị trong Terminal.
+1. Website có khởi động thành công hay không.
+2. Ứng dụng có kết nối được đến SQL Server hay không.
+3. Danh sách món ăn có hiển thị đúng dữ liệu hay không.
+4. Trang chi tiết có hiển thị nguyên liệu và các bước nấu ăn hay không.
+5. Các chức năng đánh giá, bình luận và yêu thích có hoạt động đúng hay không.
 
-## 12. Kiểm tra kết nối cơ sở dữ liệu
+Ghi lại kết quả kiểm thử và bổ sung ảnh minh chứng vào báo cáo dự án.
 
-Dự án cung cấp đường dẫn kiểm tra kết nối SQL Server:
+## 8. Tác giả và liên hệ
 
-`/kiem-tra-db`
+**Nguyễn Thạch Toàn Quốc**
 
-Sau khi chạy website, truy cập đường dẫn sau và thay cổng bằng cổng thực tế của ứng dụng:
+- Email: nt.toanquoc@gmail.com
+- Điện thoại: 0386779008
 
-`https://localhost:<port>/kiem-tra-db`
-
-Ví dụ, nếu website chạy tại `https://localhost:7148`, hãy truy cập:
-
-`https://localhost:7148/kiem-tra-db`
-
-Nếu kết nối thành công, ứng dụng trả về:
-
-`Ket noi SQL Server thanh cong!`
-
-Nếu có lỗi, hãy kiểm tra SQL Server, tên cơ sở dữ liệu, tên máy chủ và chuỗi kết nối trong `appsettings.json`.
-
-## 13. Xử lý lỗi thường gặp
-
-### Không kết nối được SQL Server
-
-- Kiểm tra SQL Server đã khởi động.
-- Kiểm tra tên máy chủ trong `appsettings.json`.
-- Kiểm tra cơ sở dữ liệu `WebsiteNauAn` đã tồn tại.
-- Kiểm tra tài khoản Windows có quyền truy cập cơ sở dữ liệu.
-
-### Lỗi khi biên dịch dự án
-
-- Kiểm tra phiên bản .NET SDK.
-- Khôi phục các gói NuGet.
-- Kiểm tra thông báo lỗi trong Error List của Visual Studio.
-
-### Website không hiển thị dữ liệu
-
-- Kiểm tra các bảng trong SQL Server.
-- Kiểm tra dữ liệu mẫu đã được thêm hay chưa.
-- Kiểm tra kết nối và truy vấn dữ liệu trong ứng dụng.
-
-## 14. Lưu ý bảo mật
-
-- Không đưa mật khẩu hoặc thông tin đăng nhập bí mật lên GitHub công khai.
-- Không chạy lại script tạo bảng trên cơ sở dữ liệu có dữ liệu cần giữ lại nếu chưa sao lưu.
-- Khi chạy dự án trên máy khác, cần cấu hình lại chuỗi kết nối SQL Server.
-- Cần cập nhật tài liệu khi cấu trúc hoặc chức năng dự án thay đổi.
-
-## 15. Thông tin dự án
-
-**Tên dự án:** WebsiteNauAn – Website chia sẻ công thức nấu ăn.
-
-**Repository GitHub:**
-
-https://github.com/quocntt060196/ASPNET-vx24ttk6-nguyenthachtoanquoc-MENU
-
-**Thư mục mã nguồn:** `src/WebsiteNauAn`
-
-**Thư mục cơ sở dữ liệu:** `setup/database`
-
----
-
-README này cung cấp hướng dẫn cơ bản để tải mã nguồn, tạo cơ sở dữ liệu, cấu hình SQL Server và chạy dự án WebsiteNauAn trong môi trường phát triển.
+Dự án được thực hiện với mục đích học tập và thực hành phát triển ứng dụng web bằng ASP.NET Core MVC.
