@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebsiteNauAn.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Công thức nấu ăn";
+}
+
+<div class="container mt-4">
+    <h1>Công thức nấu ăn</h1>
+    <p>Chào mừng bạn đến với website chia sẻ công thức nấu ăn!</p>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var recipe in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        @if (!string.IsNullOrEmpty(recipe.ImageUrl))
+                        {
+                            <img src="@recipe.ImageUrl"
+                                 class="card-img-top"
+                                 alt="@recipe.Title" />
+                        }
+
+                        <div class="card-body">
+                            <h5 class="card-title">@recipe.Title</h5>
+                            <p>@(recipe.Description ?? "Chưa có mô tả.")</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p>Chưa có công thức nấu ăn nào.</p>
+    }
+</div>

@@ -1,0 +1,14 @@
+
+# File sinh tự động của .NET và Visual Studio
+**/bin/
+**/obj/
+.vs/
+*.csproj.user
+*.suo
+
+# File cấu hình môi trường phát triển
+**/appsettings.Development.json
+
+# Thông tin bí mật và file môi trường
+.env
+.env.*
