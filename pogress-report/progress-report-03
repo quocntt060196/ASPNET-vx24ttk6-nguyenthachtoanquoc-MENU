@@ -1,0 +1,60 @@
+
+# BÁO CÁO TIẾN ĐỘ ĐỒ ÁN TUẦN 03
+
+## 1. Thông tin chung
+
+- **Tên đề tài:** Xây dựng Website chia sẻ công thức nấu ăn (WebsiteNauAn).
+- **Sinh viên thực hiện:** Nguyễn Thạch Toàn Quốc.
+- **Tuần báo cáo:** Tuần 03.
+- **Thời gian thực hiện:** Từ ngày …/…/2026 đến ngày …/…/2026.
+
+## 2. Nội dung công việc đã thực hiện
+
+### 2.1. Kiểm tra cơ sở dữ liệu SQL Server
+
+Tiếp tục kiểm tra cấu trúc cơ sở dữ liệu WebsiteNauAn trên SQL Server, bao gồm các bảng dữ liệu và mối quan hệ giữa các bảng. Rà soát file `database.sql` trong thư mục `setup/database` nhằm hỗ trợ việc tạo cơ sở dữ liệu khi cài đặt dự án trên máy tính khác.
+
+Cơ sở dữ liệu được tổ chức để phục vụ các chức năng chính của website như quản lý người dùng, danh mục món ăn, công thức nấu ăn, nguyên liệu, các bước thực hiện, bình luận, yêu thích và đánh giá.
+
+### 2.2. Cấu hình và kiểm tra kết nối website với SQL Server
+
+Tiếp tục kiểm tra cấu hình kết nối giữa ứng dụng ASP.NET Core MVC và SQL Server. Chuỗi kết nối được khai báo trong file `appsettings.json`, đồng thời `ApplicationDbContext` được đăng ký trong `Program.cs` để ứng dụng có thể làm việc với cơ sở dữ liệu.
+
+Đã kiểm tra khả năng kết nối cơ sở dữ liệu trong môi trường phát triển. Việc kiểm tra này giúp phát hiện sớm các vấn đề liên quan đến cấu hình máy chủ, tên cơ sở dữ liệu và thông tin xác thực.
+
+### 2.3. Hoàn thiện README và hướng dẫn cài đặt
+
+Đã soạn thảo và bổ sung nội dung cho file `README.md` tại repository GitHub. Tài liệu giới thiệu đề tài, công nghệ sử dụng, cấu trúc thư mục và các bước chuẩn bị môi trường để chạy website.
+
+Nội dung hướng dẫn bao gồm việc lấy mã nguồn từ GitHub, thiết lập cơ sở dữ liệu bằng file SQL, kiểm tra chuỗi kết nối trong `appsettings.json` và chạy ứng dụng bằng Visual Studio hoặc dòng lệnh .NET.
+
+Việc bổ sung tài liệu giúp giảng viên và người sử dụng thuận tiện hơn trong việc tìm hiểu, cài đặt và kiểm tra dự án.
+
+## 3. Kết quả đạt được
+
+- Rà soát cấu trúc cơ sở dữ liệu SQL Server và file tạo cơ sở dữ liệu.
+- Kiểm tra cấu hình kết nối giữa ứng dụng ASP.NET Core MVC và SQL Server.
+- Bổ sung tài liệu README hướng dẫn cấu trúc dự án và các bước cài đặt, chạy thử.
+- Từng bước hoàn thiện việc tổ chức mã nguồn và tài liệu phục vụ quá trình nộp đồ án trên GitHub.
+
+## 4. Khó khăn và hướng khắc phục
+
+Một số vấn đề cần chú ý là cấu hình kết nối cơ sở dữ liệu có thể khác nhau giữa các máy tính, cũng như yêu cầu về phiên bản .NET và các gói thư viện cần thiết.
+
+Hướng khắc phục là ghi rõ các yêu cầu môi trường trong README, kiểm tra chuỗi kết nối trước khi chạy chương trình và hướng dẫn người dùng thực hiện các bước thiết lập theo đúng thứ tự.
+
+## 5. Kế hoạch thực hiện tuần tiếp theo
+
+- Tiếp tục kiểm tra tính ổn định của kết nối cơ sở dữ liệu.
+- Rà soát các chức năng hiện có của website và sửa lỗi nếu phát sinh.
+- Kiểm tra lại hướng dẫn cài đặt trên môi trường phát triển.
+- Tiếp tục hoàn thiện các chức năng của website theo phạm vi đề tài.
+- Cập nhật mã nguồn, tài liệu và báo cáo tiến độ lên GitHub.
+
+## 6. Tự đánh giá
+
+Trong tuần 03, em tập trung rà soát cơ sở dữ liệu, kiểm tra kết nối giữa website và SQL Server, đồng thời hoàn thiện tài liệu hướng dẫn cài đặt. Các công việc này góp phần nâng cao khả năng triển khai và bảo trì dự án. Trong thời gian tới, em sẽ tiếp tục kiểm thử và hoàn thiện các chức năng còn thiếu để đáp ứng yêu cầu của đồ án.
+
+**Sinh viên thực hiện**
+
+Nguyễn Thạch Toàn Quốc
